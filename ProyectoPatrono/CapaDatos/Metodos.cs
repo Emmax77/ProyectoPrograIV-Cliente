@@ -154,6 +154,8 @@ namespace CapaDatos
                 objComando.CommandType = CommandType.Text;
                 objComando.CommandText = "insert into DeduccionEmpleado(IdDeduccion,IdLote,IdEmpleado,FechaCorte,IdCredito,Amortizacion,Intereses) values ("+ (cont + 1)+", "+lote+", "+idEmpleado+", "+ "'04/12/2017'"+","+credito+","+amortizacion+","+intereses+")";
                 int num = objComando.ExecuteNonQuery();
+                objComando.CommandText = "insert into DeduccionAplicada(IdDeduccion,Amortizacion,Intereses) values (" + (cont + 1) + ", " + amortizacion + "," + intereses + ")";
+                num = objComando.ExecuteNonQuery();
                 Conectar(false);
                 return true;
             }
