@@ -173,27 +173,39 @@ namespace ProyectoPatrono
             string nombre = txtNombre.Text;
             string apellido1 = txtApellido1.Text;
             string apellido2 = txtApellido2.Text;
-            if (nombre != "") {
-                int idEmpleado = Convert.ToInt32(txtIdEmpleado.Text);
-                foreach (DataGridViewRow dgvRenglon in dgvEdicion.Rows)
+            try
+            {
+                if (nombre != "")
                 {
-                    idlote = Convert.ToInt32(dgvRenglon.Cells[0].Value);
-                    idCredito = Convert.ToInt32(dgvRenglon.Cells[3].Value);
-                    amortizacion = Convert.ToInt32(dgvRenglon.Cells[7].Value);
-                    intereses = Convert.ToInt32(dgvRenglon.Cells[8].Value);
+                    int idEmpleado = Convert.ToInt32(txtIdEmpleado.Text);
+                    foreach (DataGridViewRow dgvRenglon in dgvEdicion.Rows)
+                    {
+                        idlote = Convert.ToInt32(dgvRenglon.Cells[0].Value);
+                        idCredito = Convert.ToInt32(dgvRenglon.Cells[3].Value);
+                        amortizacion = Convert.ToInt32(dgvRenglon.Cells[7].Value);
+                        intereses = Convert.ToInt32(dgvRenglon.Cells[8].Value);
+                    }
+                    CapaLogica.Logica o = new CapaLogica.Logica();
+                    if (o.pago(idlote, idEmpleado, idCredito, amortizacion, intereses, nombre, apellido1, apellido2) == true)
+                    {
+                        MessageBox.Show("Pago aplicado");
+                    }
+                    else
+                    {
+                        MessageBox.Show(CapaLogica.Logica.error);
+                    }
                 }
-                CapaLogica.Logica o = new CapaLogica.Logica();
-                if (o.pago(idlote, idEmpleado, idCredito, amortizacion, intereses, nombre, apellido1, apellido2) == true)
+                else
                 {
-                    MessageBox.Show("Pago aplicado");
-                }
-                else {
-                    MessageBox.Show(CapaLogica.Logica.error);
+                    MessageBox.Show("Debe seleccionar el Empleado para realizar el pago");
                 }
             }
-            else {
-                MessageBox.Show("Debe seleccionar el Empleado para realizar el pago");
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
             }
+            
             
             
         }

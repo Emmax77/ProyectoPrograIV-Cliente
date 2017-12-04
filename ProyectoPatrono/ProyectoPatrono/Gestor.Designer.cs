@@ -35,6 +35,15 @@
             this.tabGestor = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
+            this.lbId = new System.Windows.Forms.Label();
+            this.txtApellido2 = new System.Windows.Forms.TextBox();
+            this.txtApellido1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbApellido1 = new System.Windows.Forms.Label();
+            this.lbEmpleado = new System.Windows.Forms.Label();
             this.btnExportar = new System.Windows.Forms.Button();
             this.lbResgitroEditado = new System.Windows.Forms.Label();
             this.lbTituloActual = new System.Windows.Forms.Label();
@@ -42,15 +51,6 @@
             this.dgvEdicion = new System.Windows.Forms.DataGridView();
             this.dgvActual = new System.Windows.Forms.DataGridView();
             this.lbtitulo = new System.Windows.Forms.Label();
-            this.lbEmpleado = new System.Windows.Forms.Label();
-            this.lbApellido1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido1 = new System.Windows.Forms.TextBox();
-            this.txtApellido2 = new System.Windows.Forms.TextBox();
-            this.lbId = new System.Windows.Forms.Label();
-            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosBanco)).BeginInit();
             this.tabGestor.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -152,6 +152,87 @@
             this.tabPage2.Text = "Editar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtIdEmpleado
+            // 
+            this.txtIdEmpleado.Location = new System.Drawing.Point(221, 12);
+            this.txtIdEmpleado.Name = "txtIdEmpleado";
+            this.txtIdEmpleado.Size = new System.Drawing.Size(137, 20);
+            this.txtIdEmpleado.TabIndex = 18;
+            // 
+            // lbId
+            // 
+            this.lbId.AutoSize = true;
+            this.lbId.Location = new System.Drawing.Point(79, 15);
+            this.lbId.Name = "lbId";
+            this.lbId.Size = new System.Drawing.Size(71, 13);
+            this.lbId.TabIndex = 17;
+            this.lbId.Text = "ID Empleado:";
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.Location = new System.Drawing.Point(505, 47);
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.ReadOnly = true;
+            this.txtApellido2.Size = new System.Drawing.Size(200, 20);
+            this.txtApellido2.TabIndex = 16;
+            // 
+            // txtApellido1
+            // 
+            this.txtApellido1.Location = new System.Drawing.Point(505, 12);
+            this.txtApellido1.Name = "txtApellido1";
+            this.txtApellido1.ReadOnly = true;
+            this.txtApellido1.Size = new System.Drawing.Size(200, 20);
+            this.txtApellido1.TabIndex = 15;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(221, 47);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(137, 20);
+            this.txtNombre.TabIndex = 14;
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnConsultar.Location = new System.Drawing.Point(750, 15);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(216, 29);
+            this.btnConsultar.TabIndex = 13;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(434, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Apellido2:";
+            // 
+            // lbApellido1
+            // 
+            this.lbApellido1.AutoSize = true;
+            this.lbApellido1.Location = new System.Drawing.Point(434, 15);
+            this.lbApellido1.Name = "lbApellido1";
+            this.lbApellido1.Size = new System.Drawing.Size(56, 13);
+            this.lbApellido1.TabIndex = 11;
+            this.lbApellido1.Text = "Apellido1: ";
+            // 
+            // lbEmpleado
+            // 
+            this.lbEmpleado.AutoSize = true;
+            this.lbEmpleado.Location = new System.Drawing.Point(79, 50);
+            this.lbEmpleado.Name = "lbEmpleado";
+            this.lbEmpleado.Size = new System.Drawing.Size(100, 13);
+            this.lbEmpleado.TabIndex = 10;
+            this.lbEmpleado.Text = "Nombre Empleado: ";
+            // 
             // btnExportar
             // 
             this.btnExportar.BackColor = System.Drawing.Color.Maroon;
@@ -236,87 +317,6 @@
             this.lbtitulo.Size = new System.Drawing.Size(980, 37);
             this.lbtitulo.TabIndex = 6;
             this.lbtitulo.Text = "Gestor del Patrono";
-            // 
-            // lbEmpleado
-            // 
-            this.lbEmpleado.AutoSize = true;
-            this.lbEmpleado.Location = new System.Drawing.Point(79, 50);
-            this.lbEmpleado.Name = "lbEmpleado";
-            this.lbEmpleado.Size = new System.Drawing.Size(100, 13);
-            this.lbEmpleado.TabIndex = 10;
-            this.lbEmpleado.Text = "Nombre Empleado: ";
-            // 
-            // lbApellido1
-            // 
-            this.lbApellido1.AutoSize = true;
-            this.lbApellido1.Location = new System.Drawing.Point(434, 15);
-            this.lbApellido1.Name = "lbApellido1";
-            this.lbApellido1.Size = new System.Drawing.Size(56, 13);
-            this.lbApellido1.TabIndex = 11;
-            this.lbApellido1.Text = "Apellido1: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(434, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Apellido2:";
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnConsultar.Location = new System.Drawing.Point(750, 15);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(216, 29);
-            this.btnConsultar.TabIndex = 13;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(221, 47);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(137, 20);
-            this.txtNombre.TabIndex = 14;
-            // 
-            // txtApellido1
-            // 
-            this.txtApellido1.Location = new System.Drawing.Point(505, 12);
-            this.txtApellido1.Name = "txtApellido1";
-            this.txtApellido1.ReadOnly = true;
-            this.txtApellido1.Size = new System.Drawing.Size(200, 20);
-            this.txtApellido1.TabIndex = 15;
-            // 
-            // txtApellido2
-            // 
-            this.txtApellido2.Location = new System.Drawing.Point(505, 47);
-            this.txtApellido2.Name = "txtApellido2";
-            this.txtApellido2.ReadOnly = true;
-            this.txtApellido2.Size = new System.Drawing.Size(200, 20);
-            this.txtApellido2.TabIndex = 16;
-            // 
-            // lbId
-            // 
-            this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(79, 15);
-            this.lbId.Name = "lbId";
-            this.lbId.Size = new System.Drawing.Size(71, 13);
-            this.lbId.TabIndex = 17;
-            this.lbId.Text = "ID Empleado:";
-            // 
-            // txtIdEmpleado
-            // 
-            this.txtIdEmpleado.Location = new System.Drawing.Point(221, 12);
-            this.txtIdEmpleado.Name = "txtIdEmpleado";
-            this.txtIdEmpleado.Size = new System.Drawing.Size(137, 20);
-            this.txtIdEmpleado.TabIndex = 18;
             // 
             // Gestor
             // 
